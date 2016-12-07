@@ -2,18 +2,18 @@
 
 ## users テーブル
 
-|column|type|restriction|unique constraints|index|foreign key constraint|
-|:-----:|:-----:|:------:|:------:|:-----:|:-----:|
-|name|string|null-false|true|add|-|
-|email|string|null-false|true|add|-|
-|password|string|null-false|-|-|-|
-|group_id|string|-|-|-|true|
+|column|type|restriction|unique constraints|index|
+|:-----:|:-----:|:------:|:------:|:-----:|
+|name|string|null-false|true|add|
+|email|string|null-false|true|add|
+|password|string|null-false|-|-|
+
 
 ## groups テーブル
 
 |column|type|
 |:------:|:------:|
-|keys|string|
+|name|string|
 
 ## messages テーブル
 
@@ -23,3 +23,10 @@
 |group_id|integer|true|
 |image|string|-|
 |body|text|-|
+
+## users_groups テーブル
+
+|column|type|foreign key constraints|
+|:------:|:------:|:-----:|
+|user_id|integer|true|
+|group_id|integer|true|
