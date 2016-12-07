@@ -1,24 +1,25 @@
-# README
+# データベース設計
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## users テーブル
 
-Things you may want to cover:
+|column|type|restriction|unique constraints|index|foreign key constraint|
+|:-----:|:-----:|:------:|:------:|:-----:|:-----:|
+|name|string|null-false|true|add|-|
+|email|string|null-false|true|add|-|
+|password|string|null-false|-|-|-|
+|group_id|string|-|-|-|true|
 
-* Ruby version
+## groups テーブル
 
-* System dependencies
+|column|type|
+|:------:|:------:|
+|keys|string|
 
-* Configuration
+## messages テーブル
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+|column|type|foreign key constraint|
+|:----:|:----:|:----:|
+|user_id|integer|true|
+|group_id|integer|true|
+|image|string|-|
+|body|text|-|
