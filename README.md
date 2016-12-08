@@ -24,7 +24,7 @@
 |image|string|-|
 |body|text|-|
 
-## users_groups テーブル
+## user_groups テーブル
 
 |column|type|foreign key constraints|
 |:------:|:------:|:-----:|
