@@ -1,8 +1,8 @@
 .chat-notification {
   min-width: 100%;
   height: 30px;
-  color: #fff;
-  background-color: #38AEF0;
+  color: $mainwhite;
+  background-color: $whiteblue;
   text-align: center;
   padding: 2px 0;
   font-weight: lighter;
@@ -23,7 +23,7 @@
 .chat-user {
   @include clearfix ();
   padding: 20px;
-  color: #fff;
+  color: $mainwhite;
   background-color: #253141;
 
   &__actions {
@@ -33,7 +33,7 @@
     display: inline-block;
     margin: 15px 0 15px 3px;
     line-height: 28px;
-    color: #fff;
+    color: $mainwhite;
     font-size: 20px;
   }
 }
@@ -58,7 +58,7 @@ h5 {
 .chat-groups {
   margin: 0;
   padding: 0;
-  color: #fff;
+  color: $mainwhite;
   list-style: none;
 }
 
@@ -70,7 +70,7 @@ h5 {
   &__link {
     display: block;
     padding: 20px 20px;
-    color: #fff;
+    color: $mainwhite;
     text-decoration: none;
   }
 
@@ -101,7 +101,7 @@ h5 {
   @include clearfix ();
   padding-right: 40px;
   padding-left: 40px;
-  background-color: #fff;
+  background-color: $mainwhite;
   border-bottom: 1px solid #eee;
 
   &--left {
@@ -128,7 +128,7 @@ h5 {
     padding-right: 20px;
     padding-left: 20px;
     line-height: 40px;
-    color: #38aef0;
+    color: $whiteblue;
     font-size: 14px;
     border: 2px solid;
   }
@@ -168,7 +168,7 @@ h2 {
   &__name {
     float: left;
     font-size: 16px;
-    color: #434A54;
+    color: $gray;
     margin-bottom: 10px;
     font-weight: bold;
   }
@@ -182,7 +182,7 @@ h2 {
 
   &__body {
     font-size: 14px;
-    color: #434A54;
+    color: $gray;
   }
 }
 
@@ -216,7 +216,7 @@ h2 {
 textarea {
   width: 100%;
   font-size: 16px;
-  color: #434A54;
+  color: $gray;
   height: 20px;
   padding: 15px 10px;
   border: none;
@@ -231,7 +231,7 @@ input {
   width: 100px;
   margin-left: 15px;
   line-height: 50px;
-  color: #fff;
+  color: $mainwhite;
   background-color: #39aef0;
   text-align: center;
   border: none;
