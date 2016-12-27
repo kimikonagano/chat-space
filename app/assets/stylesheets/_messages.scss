@@ -38,7 +38,7 @@
   }
 }
 
-h5 {
+.topicname {
   float: left;
   line-height: 60px;
   letter-spacing: 2px;
@@ -134,7 +134,7 @@ h5 {
   }
 }
 
-h2 {
+.messagetitle {
   margin-top: 20px;
   line-height: 50px;
   letter-spacing: 2px;
@@ -213,7 +213,7 @@ h2 {
   }
 }
 
-textarea {
+.messageplace {
   width: 100%;
   font-size: 16px;
   color: $gray;
@@ -225,7 +225,7 @@ textarea {
   margin: auto 0;
 }
 
-input {
+.sendbtn {
   float: left;
   display: inline-block;
   width: 100px;
