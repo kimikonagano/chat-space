@@ -17,7 +17,7 @@
     */
     /*
         TODO test putting a class on HEAD.
-            - Fails on FF. 
+            - Fails on FF.
     */
     body,
     div,
@@ -47,12 +47,14 @@
         margin:0;
         padding:0;
     }
+
     body {
         display: flex;
         flex-direction: column;
         font-family: "Hiragino Sans", "HElveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
         color: #434a54;
     }
+
     table {
         border-collapse:collapse;
         border-spacing:0;
