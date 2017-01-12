@@ -6,7 +6,8 @@
       %h5.topicname kimiko
       .chat-user__actions
         %a.chat-user__action
-          %i.fa.fa-pencil-square-o
+          = link_to new_group_path do
+            %i.fa.fa-pencil-square-o
         %a.chat-user__action
           = link_to edit_user_registration_path do
             %i.fa.fa-cog
@@ -27,7 +28,7 @@
           Members:
           %span.chat-heaeder__user kimiko
       .chat-header--right
-        %a.chat-header__edit-btn Edit
+        = link_to 'Edit', "#", class: 'chat-header__edit-btn'
     .chat-body
       %ul.chat-message
         %li.chat-message
@@ -37,7 +38,7 @@
           %p.chat-message__body test
     .chat-footer
       .chat-footer__body
-        %textarea.messageplace#message_body{row: "1", placeholder: "type a message", name: "message[body]", id: "message_body"}
+        %textarea.messageplace#message_body{ row: "1", placeholder: "type a message", name: "message[body]", id: "message_body" }
         %label.chat-footer__file
           %i.fa.fa-image
-      %input.sendbtn{name: "commit", type: "submit", value: "Send"}
+      %input.sendbtn{ name: "commit", type: "submit", value: "Send" }
