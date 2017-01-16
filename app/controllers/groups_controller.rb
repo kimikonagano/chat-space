@@ -1,17 +1,33 @@
 class GroupsController < ApplicationController
+  def index
+    @group = Group.all
+  end
+
   def new
     @group = Group.new
   end
 
   def create
-    Group.create(group_params)
+    @group = Group.create(group_params)
+    if @group.save
+      render :index, id: @group
+    else
+      render :new
+    end
   end
 
   def edit
+    @group = Group.find(params[:id])
   end
 
   def update
-    redirect_to action: :index
+    @group = Group.find(params[:id])
+    @group.update(group_params)
+    if @group.save
+      render :index, id: @group
+    else
+      render :edit
+    end
   end
 
   private
