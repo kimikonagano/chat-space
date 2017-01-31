@@ -1,23 +1,5 @@
 .whole-layout
-  .chat-side
-    .chat-user.clearfix
-      %h5.topicname kimiko
-      .chat-user__actions
-        %a.chat-user__action
-          = link_to new_group_path do
-            %i.fa.fa-pencil-square-o
-        %a.chat-user__action
-          = link_to edit_user_registration_path do
-            %i.fa.fa-cog
-    %ul.chat-groups
-      %li.chat-group
-        %a.chat-group__link
-          %p.chat-group__name test
-          %p.chat-group__message a
-      %li.chat-group
-        %a.chat-group__link
-          %p.chat-group__name test
-          %p.chat-group__message test
+  = render 'groups/sidebar', groups: @groups
   .chat-main
     .chat-header.clearfix
       .chat-header--left
@@ -26,7 +8,8 @@
           Members:
           %span.chat-heaeder__user kimiko
       .chat-header--right
-        = link_to 'Edit', edit_group_path(@group.id), class: "chat-header__edit-btn"
+        = link_to edit_group_path(@group) do
+          %p.chat-header__edit-btn Edit
     .chat-body
       %ul.chat-message
         %li.chat-message
