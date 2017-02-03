@@ -17,10 +17,7 @@ class GroupsController < ApplicationController
       redirect_to action: :index
       flash[:success] = "チャットグループが作成されました。"
     else
-      redirect_to action: :new
-      flash[:alert] = "1 error prohibited this chat_group from being saved:
-
-        グループ名を入力してください"
+      render action: :new
     end
   end
 
@@ -36,10 +33,7 @@ class GroupsController < ApplicationController
       redirect_to action: :index
       flash[:success] = "チャットグループが更新されました･*･:≡( ε:)"
     else
-      redirect_to action: :edit
-      flash[:alert] = "1 error prohibited this chat_group from being saved:
-
-        グループ名を入力してください"
+      render action: :edit
     end
   end
 
