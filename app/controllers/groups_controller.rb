@@ -1,6 +1,6 @@
 class GroupsController < ApplicationController
 
-  before_action :find_group, only: [:show, :edit, :update]
+  before_action :find_group, only: [:edit, :update]
 
   def index
     @groups = Group.all
@@ -21,16 +21,12 @@ class GroupsController < ApplicationController
     end
   end
 
-  def show
-    @groups = Group.all
-  end
-
   def edit
   end
 
   def update
     if @group.update(group_params)
-      redirect_to action: :index
+      redirect_to group_messages_path(@group)
       flash[:success] = "チャットグループが更新されました･*･:≡( ε:)"
     else
       render action: :edit

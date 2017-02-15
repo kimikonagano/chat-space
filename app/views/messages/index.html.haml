@@ -3,23 +3,31 @@
   .chat-main
     .chat-header.clearfix
       .chat-header--left
-        %h2.messagetitle test
+        %h2.messagetitle
+          = @group.name
         %p.chat-header__users
           Members:
-          %span.chat-heaeder__user kimiko
+          %span.chat-heaeder__user
+            = current_user.name
       .chat-header--right
         = link_to edit_group_path(@group) do
           %p.chat-header__edit-btn Edit
     .chat-body
       %ul.chat-message
         %li.chat-message
-          .chat-message__header.clearfix
-            %p.chat-message__name kimiko
-            %p.chat-message__time 2000/02/02 02:02:02
-          %p.chat-message__body test
-    .chat-footer
-      .chat-footer__body
-        %textarea.messageplace#message_body{ row: "1", placeholder: "type a message", name: "message[body]", id: "message_body" }
-        %label.chat-footer__file
-          %i.fa.fa-image
-      %input.sendbtn{ name: "commit", type: "submit", value: "Send" }
+          = @messages.each do |message|
+            .chat-message__header.clearfix
+              %p.chat-message__name
+                = message.user.name
+              %p.chat-message__time
+                = message.created_at
+            - if message.text.present?
+              %p.chat-message__body
+                = message.text
+    = form_for [ @group, @message ] do |f|
+      .chat-footer
+        .chat-footer__body
+          = f.text_field :text, placeholder: "type a message", class: "messageplace", id: "message_body"
+          %label.chat-footer__file
+            %i.fa.fa-image
+        = f.submit "Send", class: "sendbtn"

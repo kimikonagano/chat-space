@@ -1,6 +1,7 @@
 .chat-side
   .chat-user.clearfix
-    %h5.topicname kimiko
+    %h5.topicname
+      = current_user.name
     .chat-user__actions
       %a.chat-user__action
         = link_to new_group_path do
@@ -10,7 +11,10 @@
           %i.fa.fa-cog
   %ul.chat-groups
     - groups.each do |group|
-      = link_to group_path(group), class: 'chat-group__link' do
+      = link_to group_messages_path(group), class: 'chat-group__link' do
         %li.chat-group
-          %p.chat-group__name test
-          %p.chat-group__message a
+          %p.chat-group__name
+            = group.name
+          -if group.messages.present?
+            %p.chat-group__message
+              = group.messages.last.text
