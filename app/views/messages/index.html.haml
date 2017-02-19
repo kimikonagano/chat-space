@@ -15,7 +15,7 @@
     .chat-body
       %ul.chat-message
         %li.chat-message
-          = @messages.each do |message|
+          - @messages.each do |message|
             .chat-message__header.clearfix
               %p.chat-message__name
                 = message.user.name
