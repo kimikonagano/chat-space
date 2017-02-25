@@ -2,9 +2,8 @@ require 'rails_helper'
 
 describe MessagesController, type: :controller do
   let!(:message) { FactoryGirl.build(:message) }
-  let!(:message_params) { { text: message.text, group: group, user: current_user } }
+  let!(:message_params) { { text: message.text, group: group, user: subject.current_user } }
   let(:group) { create(:group) }
-  let(:current_user) { subject.current_user }
 
   describe "when user is log in" do
     login_user
